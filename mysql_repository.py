@@ -50,7 +50,7 @@ def add_visit_end_dtime(user_id, dtime):
 def get_last_visits_end_time():
     """
     Returns:
-        last_visits (dict[user_id: dtime]): Last visit time for every user.
+        last_visits (dict[user_id: datetime]): Last visit time for every user.
         Last visit time is None if user is currently in the gym.
     """
     query = """SELECT t1.user_id, t1.end_time
@@ -63,6 +63,18 @@ WHERE t2.user_id IS NULL;"""
     records = cursor.fetchall()
     records = dict(records)
     return records
+
+
+def get_last_visit_start_time(user_id):
+    """
+    Returns start datetime of the last visit of specified user. Of were no visits, return None.
+    """
+    query = (
+        "SELECT start_time FROM attendance WHERE user_id = %s ORDER BY id DESC LIMIT 1;"
+    )
+    cursor.execute(query, (user_id,))
+    start_dtime = cursor.fetchone()
+    return start_dtime
 
 
 if __name__ == "__main__":

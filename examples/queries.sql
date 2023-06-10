@@ -3,11 +3,11 @@
 -- UPDATE attendance SET swipe_out = '1998-01-23 12:45:56' WHERE user_id = '0123456789' ORDER BY id DESC LIMIT 1;
 -- SELECT * FROM attendance;
 
-SELECT t1.*
-FROM attendance AS t1
-LEFT JOIN attendance AS t2
-ON t1.user_id = t2.user_id
-AND t1.start_time < t2.start_time
-WHERE t2.user_id IS NULL;
+-- SELECT t1.user_id, t1.end_time
+-- FROM attendance AS t1
+-- LEFT JOIN attendance AS t2
+-- ON t1.user_id = t2.user_id
+-- AND t1.start_time < t2.start_time
+-- WHERE t2.user_id IS NULL;
 
-SELECT * FROM attendance;
+-- SELECT * FROM attendance;
