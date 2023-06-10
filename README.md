@@ -4,8 +4,8 @@ Microservice that tracks gym users activity.
 
 ## DB Set Up
 
-Install MySQL on your system.
-Great instruction for Ubuntu: [Link](https://www.digitalocean.com/community/tutorials/how-to-install-mysql-on-ubuntu-20-04)
+Install MySQL. Instruction for Ubuntu: [Link](https://www.digitalocean.com/community/tutorials/how-to-install-mysql-on-ubuntu-20-04) \
+Install WorkBench. Instruction for Ubuntu: [Link](https://phoenixnap.com/kb/mysql-workbench-ubuntu)
 
 Run following commands.
 
